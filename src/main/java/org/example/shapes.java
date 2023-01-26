@@ -2,11 +2,11 @@ package org.example;
 
 import java.util.Scanner;
 
-public class shapes {
+public class Shapes {
     private String type;
     private double[] dimensions;
 
-    public shapes(String type, double[] dimensions) {
+    public Shapes(String type, double[] dimensions) {
         this.type = type;
         this.dimensions = dimensions;
     }
@@ -47,7 +47,7 @@ public class shapes {
             System.out.println("Enter the " + i + "dimension value");
             dimensions[i] = sc.nextInt();
         }
-        shapes s1 = new shapes(type, dimensions);
+        Shapes s1 = new Shapes(type, dimensions);
 
         System.out.println("Area of " + type +": " +s1.getArea());
         System.out.println("Perimeter of " + type +": " + s1.getPerimeter());
