@@ -1,12 +1,15 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.logging.*;
 
-public class Shapes {
+public class shapes {
+    Logger l=Logger.getLogger("kitty");
     private String type;
+
     private double[] dimensions;
 
-    public Shapes(String type, double[] dimensions) {
+    public shapes(String type, double[] dimensions) {
         this.type = type;
         this.dimensions = dimensions;
     }
@@ -37,19 +40,20 @@ public class Shapes {
     }
 
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
+        Scanner sc=new Scanner(System.in);
+        Logger l=Logger.getLogger("kitty");
         double[] dimensions = new double[3];
 
-        System.out.println("Enter the type of shape");
+        l.log(Level.INFO,() ->"Enter the type of shape");
         String type = sc.next();
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Enter the " + i + "dimension value");
+        for (int i = 0; i < 3; i++)
+        {
+            l.info("Enter the dimensions(1,2,3) values ");
+
             dimensions[i] = sc.nextInt();
         }
-        Shapes s1 = new Shapes(type, dimensions);
-
-        System.out.println("Area of " + type +": " +s1.getArea());
-        System.out.println("Perimeter of " + type +": " + s1.getPerimeter());
+        shapes s1 = new shapes(type, dimensions);
+        l.log(Level.INFO,() ->"Area of " + type +": " +s1.getArea());
+        l.log(Level.INFO,() ->"Perimeter of " + type +": " + s1.getPerimeter());
     }
 }
