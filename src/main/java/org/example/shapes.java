@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 import java.util.logging.*;
 
-public class shapes {
+public class Shapes {
     Logger l=Logger.getLogger("kitty");
     private String type;
 
@@ -52,7 +52,7 @@ public class shapes {
 
             dimensions[i] = sc.nextInt();
         }
-        shapes s1 = new shapes(type, dimensions);
+        Shapes s1 = new Shapes(type, dimensions);
         l.log(Level.INFO,() ->"Area of " + type +": " +s1.getArea());
         l.log(Level.INFO,() ->"Perimeter of " + type +": " + s1.getPerimeter());
     }
