@@ -1,10 +1,9 @@
 package org.example;
 
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.*;
 
-public class shapes {
+public class Shapes {
     Logger l=Logger.getLogger("kitty");
     private String type;
 
@@ -47,35 +46,14 @@ public class shapes {
 
         l.log(Level.INFO,() ->"Enter the type of shape");
         String type = sc.next();
-        shapes s1 = new shapes(type, dimensions);
-        if(type.equals( "circle"))
+        for (int i = 0; i < 3; i++)
         {
-                l.info("Enter the radius ");
-                dimensions[0] = sc.nextInt();
-            l.log(Level.INFO,() ->"Area of " + type +": " +s1.getArea());
-            l.log(Level.INFO,() ->"Perimeter of " + type +": " + s1.getPerimeter());
-        }
-        else if(type.equals( "rectangle"))
-        {
-            l.info("Enter the length ");
-            dimensions[0] = sc.nextInt();
-            l.info("Enter the breadth ");
-            dimensions[1] = sc.nextInt();
-            l.log(Level.INFO,() ->"Area of " + type +": " +s1.getArea());
-            l.log(Level.INFO,() ->"Perimeter of " + type +": " + s1.getPerimeter());
-        }
+            l.info("Enter the dimensions(1,2,3) values ");
 
-        else
-        {
-            l.info("Enter the base ");
-            dimensions[0] = sc.nextInt();
-            l.info("Enter the height ");
-            dimensions[1] = sc.nextInt();
-            l.info("Enter the length ");
-            dimensions[2] = sc.nextInt();
-            l.log(Level.INFO,() ->"Area of " + type +": " +s1.getArea());
-            l.log(Level.INFO,() ->"Perimeter of " + type +": " + s1.getPerimeter());
+            dimensions[i] = sc.nextInt();
         }
-
+        Shapes s1 = new Shapes(type, dimensions);
+        l.log(Level.INFO,() ->"Area of " + type +": " +s1.getArea());
+        l.log(Level.INFO,() ->"Perimeter of " + type +": " + s1.getPerimeter());
     }
 }
